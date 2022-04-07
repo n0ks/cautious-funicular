@@ -1,0 +1,18 @@
+{
+
+ "*.ts": {
+    "alternate": "__tests__/{basename}.spec.ts",
+    "type": "source"
+  },
+  "__tests__/*.spec.ts": {
+    "alternate": "{}.ts",
+    "type": "test",
+    "template": [
+      "describe('{basename|camelcase|capitalize}', () => {open}",
+      "  it('works', () => {open}",
+      "    expect(true).toBe(true);",
+      "   {close});",
+      "{close});"
+    ]
+  }
+}
