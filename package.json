@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "barrels": "barrelsby -c barrelsby.json",
     "build": "tsc -p .",
-    "lint": "eslint_d . --ext .ts",
-    "lint:fix": "eslint_d . --ext .ts --fix --quiet",
+    "coverage": "npm run test -- --coverage",
     "esd:restart": "eslint_d restart",
     "format": "prettier --config .prettierrc 'src/**/*.ts' --write",
-    "test": "jest --passWithNoTests --watch",
+    "lint": "eslint_d . --ext .ts",
+    "lint:fix": "eslint_d . --ext .ts --fix --quiet",
     "prepare": "husky install",
-    "barrels": "barrelsby -c barrelsby.json"
+    "test": "jest --passWithNoTests --noStackTrace --silent",
+    "test:watch": "npm run test -- --watch"
   },
   "keywords": [],
   "author": "",
