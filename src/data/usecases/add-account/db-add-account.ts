@@ -6,6 +6,7 @@ import { Encrypter } from '../../protocols/encrypter';
 export class DbAddAccount implements AddAccount {
   private readonly encrypter: Encrypter;
   private readonly repository: AddAccountRepository;
+
   constructor(encrypter: Encrypter, repository: AddAccountRepository) {
     this.encrypter = encrypter;
     this.repository = repository;
@@ -13,6 +14,7 @@ export class DbAddAccount implements AddAccount {
 
   async add(account: AddAccountModel): Promise<AccountModel> {
     const hashedPw = await this.encrypter.encrypt(account.password);
-    return this.repository.add({ ...account, password: hashedPw });
+
+    return await this.repository.add(Object.assign({}, account, { password: hashedPw }));
   }
 }
