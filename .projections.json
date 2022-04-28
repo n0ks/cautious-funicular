@@ -4,7 +4,7 @@
     "alternate": "__tests__/{basename}.spec.ts",
     "type": "source"
   },
-  "__tests__/*.spec.ts": {
+  "**/__tests__/*.spec.ts": {
     "alternate": "{}.ts",
     "type": "test",
     "template": [
