@@ -6,7 +6,8 @@
 export default {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
-
+  //
+  preset: '@shelf/jest-mongodb',
   // Stop running tests after `n` failures
   // bail: 0,
 
@@ -178,7 +179,7 @@ export default {
   // A map from regular expressions to paths to transformers
   transform: {
     '.+\\.ts$': 'ts-jest'
-  }
+  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
@@ -193,7 +194,7 @@ export default {
   // verbose: undefined,
 
   // An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
-  // watchPathIgnorePatterns: [],
+  watchPathIgnorePatterns: ['globalConfig']
 
   // Whether to use watchman for file crawling
   // watchman: true,

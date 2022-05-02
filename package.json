@@ -12,13 +12,15 @@
     "lint": "eslint_d . --ext .ts",
     "lint:fix": "eslint_d . --ext .ts --fix --quiet",
     "prepare": "husky install",
-    "test": "jest --passWithNoTests --noStackTrace --silent",
+    "test": "jest --passWithNoTests ",
+    "test:verbose": "jest --passWithNoTests --verbose",
     "test:watch": "npm run test -- --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@shelf/jest-mongodb": "^2.2.2",
     "@tsconfig/node16": "^1.0.2",
     "@types/bcrypt": "^5.0.0",
     "@types/jest": "^27.4.1",
@@ -47,6 +49,7 @@
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "mongodb": "^4.5.0",
     "validator": "^13.7.0"
   }
 }
