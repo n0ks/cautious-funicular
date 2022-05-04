@@ -6,7 +6,7 @@ export class AccountMDBRepo implements AddAccountRepository {
   async add(account: AddAccountModel): Promise<AccountModel> {
     const accCollection = MongoConnector.getCollection('accounts');
 
-    let acc: AccountModel & { _id?: string } = {} as any;
+    let acc: (AccountModel & { _id?: string }) | unknown = {};
 
     const res = await accCollection.insertOne(account);
 
@@ -15,6 +15,6 @@ export class AccountMDBRepo implements AddAccountRepository {
       acc = MongoConnector.transformWithoutId(data);
     }
 
-    return new Promise((resolve) => resolve(acc));
+    return acc as AccountModel;
   }
 }
