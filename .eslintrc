@@ -13,7 +13,12 @@
   ],
   "rules": {
     "no-console": 1,
-    "prettier/prettier": 1
+    "prettier/prettier": 1,
+    "@typescript-eslint/no-explicit-any": [
+      "off"
+    ]
   },
- "ignorePatterns": ["src/**/*.spec.ts"]
+  "ignorePatterns": [
+    "src/**/*.spec.ts"
+  ]
 }
